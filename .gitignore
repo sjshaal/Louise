@@ -1,0 +1,6 @@
+.next/
+node_modules/
+.ruvector-db/
+dist-scripts/
+*.local
+.env*

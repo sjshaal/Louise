@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #ede9fe;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-cream-50 text-neutral-700 font-sans antialiased;
+    background-image: radial-gradient(circle at 20% 20%, rgba(196, 181, 253, 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(134, 239, 172, 0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    background-color: #ddd6fe;
+    color: #5b21b6;
+  }
+}
+
+@layer components {
+  .healing-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid #ede9fe;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
+  }
+
+  .dark .healing-card {
+    background: rgba(23,20,36,0.6);
+    border-color: rgba(76,29,149,0.4);
+  }
+
+  .affirmation-text {
+    font-family: Georgia, Cambria, 'Times New Roman', serif;
+    font-size: 1.125rem;
+    color: #6d28d9;
+    line-height: 1.625;
+    font-style: italic;
+  }
+
+  .dark .affirmation-text {
+    color: #c4b5fd;
+  }
+
+  .chat-bubble-user {
+    background-color: #ede9fe;
+    color: #4c1d95;
+    border-radius: 1rem;
+    border-top-right-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    max-width: 80%;
+    margin-left: auto;
+  }
+
+  .dark .chat-bubble-user {
+    background-color: rgba(76,29,149,0.6);
+    color: #ede9fe;
+  }
+
+  .chat-bubble-healer {
+    background: linear-gradient(135deg, #ffffff, #f0fdf4);
+    border: 1px solid #bbf7d0;
+    color: #374151;
+    border-radius: 1rem;
+    border-top-left-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    max-width: 85%;
+  }
+
+  .dark .chat-bubble-healer {
+    background: linear-gradient(135deg, rgba(23,20,36,0.5), rgba(27,38,27,0.5));
+    border-color: rgba(22,101,52,0.3);
+    color: #e9d5ff;
+  }
+
+  .symptom-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #f5f3ff;
+    color: #6d28d9;
+    border: 1px solid #ddd6fe;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .symptom-tag:hover {
+    background-color: #ede9fe;
+    border-color: #c4b5fd;
+  }
+
+  .dark .symptom-tag {
+    background-color: rgba(46,16,101,0.6);
+    color: #c4b5fd;
+    border-color: rgba(109,40,217,0.6);
+  }
+
+  .dark .symptom-tag:hover {
+    background-color: rgba(76,29,149,0.6);
+  }
+
+  /* Custom scrollbar */
+  .custom-scroll::-webkit-scrollbar { width: 4px; }
+  .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+  .custom-scroll::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 9999px; }
+  .dark .custom-scroll::-webkit-scrollbar-thumb { background: #6d28d9; }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, #7c3aed, #8b5cf6, #22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .dark .glass {
+    background: rgba(23,20,36,0.33);
+    border-color: rgba(76,29,149,0.3);
+  }
+}
