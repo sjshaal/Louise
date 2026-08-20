@@ -45,6 +45,31 @@ Open [http://localhost:3000](http://localhost:3000) — the app is ready.
 
 ---
 
+## ▲ Deployment (Vercel)
+
+Deployed at [daily-healer.vercel.app](https://daily-healer.vercel.app) via manual `vercel --prod` CLI upload.
+
+**Not fully set up yet:** the Vercel project is *not* connected to the [sjshaal/Louise](https://github.com/sjshaal/Louise) GitHub repo, so pushes to `main` do **not** auto-deploy. To finish setup:
+1. Connect GitHub as a login method at [vercel.com/account/login-connections](https://vercel.com/account/login-connections)
+2. In the `daily-healer` project → Settings → Git, link it to `sjshaal/Louise`
+3. Afterward, pushes to `main` will trigger automatic deployments
+
+Until then, redeploy manually after changes with `vercel --prod`.
+
+### GitHub Pages (static-only mirror)
+
+Also deployed as a static export to [sjshaal.github.io/Louise](https://sjshaal.github.io/Louise/), built from the `gh-pages` branch.
+
+**Limited functionality:** GitHub Pages only serves static files, so `app/api/*` routes are excluded from this build. Daily Healing Chat, Symptom Search, Journal, and Today's Affirmation (all of which call the API) do **not** work here — use the [Vercel deployment](https://daily-healer.vercel.app) for the full app. Redeploy this mirror manually with:
+```bash
+git worktree add /tmp/gh-pages-build gh-pages
+# edit next.config.ts: output: 'export', basePath: '/Louise', assetPrefix: '/Louise/'
+# remove app/api before building, then `npm run build`
+# commit out/ contents to the gh-pages branch and push
+```
+
+---
+
 ## 🗂 Project Structure
 
 ```
